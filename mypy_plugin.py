@@ -15,6 +15,11 @@ def union_hook(ctx: DynamicClassDefContext) -> None:
             assert isinstance(type_.expr, NameExpr)
             name = type_.expr.name
 
+            # breakpoint()
+            var_node = ctx.api.lookup_current_scope(name)
+            print(dir(var_node))
+            print(var_node.type)
+
             # how can I find the value of this expr?
             print(name)
 
